@@ -1,10 +1,11 @@
 package java_lab;
+
 import java.util.Scanner;
 
-public class matrixAddition {
+public class MulMatrix {
     public static void main(String[] args) {
         
-        int m, n, p, q;
+         int m, n, p, q;
            Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number of rows of first Matrix:");
         m = sc.nextInt();
@@ -29,17 +30,26 @@ public class matrixAddition {
                   arr2[i][j] = sc.nextInt();
             }
          }
-         //Adding Matrix
-         int [][] arr3 = new int[m][n];
-          for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                arr3[i][j] = arr1[i][j] + arr2[i][j];
+         //Multiplication Matrix
+          int [][] arr3 = new int[m][q];
+         if(n==p){
+           
+            for (int i = 0; i < m; i++) {      
+              for (int j = 0; j < q; j++) {   
+                   arr3[i][j] = 0;
+                  for (int k = 0; k < n; k++) {
+                       arr3[i][j] += arr1[i][k] * arr2[k][j];
+                    }    
+                }
             }
         }
+        else{
+            System.out.println("Matrix Multiplication is not possible::");
+        }
 
-        System.out.println("Resultant Matrix:");
+         System.out.println("Resultant Matrix:");
          for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < q; j++) {
                System.out.print(arr3[i][j] + " ");
             }
             System.out.println();
@@ -47,7 +57,7 @@ public class matrixAddition {
 
 
         sc.close();
-
+         
     }
     
 }
