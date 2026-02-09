@@ -1,4 +1,4 @@
-package feb03;
+package oopsJava.Feb;
 public class DataTypes {
     public static void main(String[] args) {
        
