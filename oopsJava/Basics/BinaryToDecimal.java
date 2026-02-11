@@ -16,7 +16,7 @@ public class BinaryToDecimal {
         
 
           System.out.println("Decimal Number: " +ans);
-  ak.close();
+          ak.close();
     }
     
 }
