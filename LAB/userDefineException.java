@@ -4,17 +4,30 @@ class Validation {
 
     
     static void checkUsername(String username) throws Exception {
-        if (username.length() < 5 || username.contains(" ")) {
+        if (username.length() < 5 || username.contains(" ") ) {
             throw new Exception("Invalid Username (min 5 chars, no spaces)");
         }
     }
 
 
     static void checkMobile(String mobile) throws Exception {
-        if (!mobile.matches("\\d{10}")) {
-            throw new Exception("Invalid Mobile (must be 10 digits)");
+
+    if (mobile.length() != 10) {
+        throw new Exception("Invalid: must be 10 digits");
+    }
+
+    if (mobile.charAt(0) == '0') {
+        throw new Exception("Invalid: should not start with 0");
+    }
+
+    for (int i = 0; i < mobile.length(); i++) {
+        if (!Character.isDigit(mobile.charAt(i))) {
+            throw new Exception("Invalid: only digits allowed");
         }
     }
+
+    System.out.println("Valid Mobile Number");
+}
 
 
     static void checkEmail(String email) throws Exception {
