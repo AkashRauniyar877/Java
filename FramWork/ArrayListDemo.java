@@ -6,6 +6,7 @@ public class ArrayListDemo {
             Arrays.asList('A','A','B','B','C','C','C','D','D')
         );
 
+        
         LinkedHashSet<Character> set = new LinkedHashSet<>(list);
         list.clear();
         list.addAll(set);
